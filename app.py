@@ -7,7 +7,7 @@ Created on Thu May 25 14:13:40 2023
 
 import dash
 import dash_bootstrap_components as dbc
-from dash import html
+from dash import html, dcc
 
 
 app = dash.Dash(
@@ -19,6 +19,11 @@ app = dash.Dash(
 
 app.layout=  html.Div([
     html.H4('Welkom bij de SPA planten BINGO!'),
+    dbc.Row(dcc.Input(
+            id="team",
+            type='text',
+            placeholder="Laat hier ÉÉN teamlid jullie team naam invoeren",
+        )),
     dbc.Row(
             [
                 dbc.Col(html.Div("One of two columns"),xs=6),
