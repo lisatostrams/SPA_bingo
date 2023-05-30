@@ -21,8 +21,8 @@ app.layout=  html.Div([
     html.H4('Welkom bij de SPA planten BINGO!'),
     dbc.Row(
             [
-                dbc.Col(html.Div("One of three columns"),xs=6),
-                dbc.Col(html.Div("One of three columns"),xs=6),
+                dbc.Col(html.Div("One of two columns"),xs=6),
+                dbc.Col(html.Div("One of two columns"),xs=6),
             ]
             )
 ])
