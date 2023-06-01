@@ -33,6 +33,7 @@ app.layout=  html.Div([
 
 
 server = app.server
+server.secret_key = os.environ.get('secret_key', 'secret')
 
 if __name__ == '__main__':
-    app.run_server(debug=False, host='0.0.0.0', port=8050)
+    app.run_server(debug=False)

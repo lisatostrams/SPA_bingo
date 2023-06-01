@@ -18,6 +18,8 @@ dash.register_page(__name__, path_template='/teams/<team_id>/<soort_groep>/<soor
              
              
 def layout(team_id=None,soort_groep=None,soort=None):
+    if team_id==None:
+        return html.Div()
     print(team_id,soort_groep,soort)
     soort_groep=soort_groep.replace('_',' ')
     soort=soort.replace('_',' ')
