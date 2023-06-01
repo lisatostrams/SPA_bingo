@@ -18,7 +18,7 @@ from whitenoise import WhiteNoise
 app = dash.Dash(
     external_stylesheets=[dbc.themes.QUARTZ],
     use_pages=True,
-    pages_folder='',
+    pages_folder='static/pages',
     meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"}
     ],
