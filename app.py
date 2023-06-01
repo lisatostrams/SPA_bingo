@@ -12,9 +12,12 @@ import os
 from dash import html, dcc
 import gunicorn
 
+pages_folder=os.path.join(os.path.dirname(__name__), "pages")
+
 app = dash.Dash(
     external_stylesheets=[dbc.themes.QUARTZ],
     use_pages=True,
+    pages_folder=pages_folder,
     meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"}
     ],
