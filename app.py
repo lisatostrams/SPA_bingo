@@ -8,9 +8,9 @@ Created on Thu May 25 14:13:40 2023
 import dash
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
-
+import os
 from dash import html, dcc
-
+import gunicorn
 
 app = dash.Dash(
     external_stylesheets=[dbc.themes.QUARTZ],
