@@ -12,6 +12,7 @@ import os
 from dash import html, dcc
 import gunicorn
 
+print(os.listdir('.'))
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 pages_folder=os.path.join(os.path.dirname(__name__), "pages")
 
