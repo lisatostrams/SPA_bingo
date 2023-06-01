@@ -11,15 +11,14 @@ from dash.dependencies import Input, Output
 import os
 from dash import html, dcc
 import gunicorn
+from whitenoise import WhiteNoise 
 
-print(os.listdir('.'))
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-pages_folder=os.path.join(os.path.dirname(__name__), "pages")
+
 
 app = dash.Dash(
     external_stylesheets=[dbc.themes.QUARTZ],
     use_pages=True,
-    pages_folder=pages_folder,
+    pages_folder='pages',
     meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"}
     ],
@@ -35,7 +34,7 @@ app.layout=  html.Div([
 
 
 server = app.server
-server.secret_key = os.environ.get('secret_key', 'secret')
+server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/') 
 
 if __name__ == '__main__':
     app.run_server(debug=False)
