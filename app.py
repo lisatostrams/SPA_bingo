@@ -24,6 +24,11 @@ app = dash.Dash(
     ],
 )
 
+
+server = app.server
+server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/') 
+
+
 app.layout=  html.Div([
     html.H2('Welkom bij de SPA planten BINGO!'),
     dash.page_container
@@ -32,9 +37,6 @@ app.layout=  html.Div([
 ])
 
 
-
-server = app.server
-server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/') 
 
 if __name__ == '__main__':
     app.run_server(debug=False)
