@@ -19,7 +19,7 @@ platformdirs==2.5.1
 plotly==5.6.0
 prettytable==3.3.0
 PyQt5==5.12.3
-PyQt5_sip==4.19.18
+PyQt5_sip==12.11.0
 PyQtChart==5.12
 PyQtWebEngine==5.12.1
 QDarkStyle==3.0.2
