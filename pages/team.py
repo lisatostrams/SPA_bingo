@@ -19,11 +19,11 @@ dash.register_page(__name__, path_template='/teams/<team_id>')
              
              
 def layout(team_id=None):
-    soort_groepen = os.listdir(f'{team_id}/')
+    soort_groepen = os.listdir(f'assets/{team_id}/')
     generate_content = []
     table = []
     for sg in soort_groepen:
-        soorten = os.listdir(f'{team_id}/{sg}')
+        soorten = os.listdir(f'assets/{team_id}/{sg}')
         generate_content.append(html.H5(sg,style={'margin-left':'10px'}))
         for s in soorten:
             href = 'teams/'+team_id+'/'+sg+'/'+s

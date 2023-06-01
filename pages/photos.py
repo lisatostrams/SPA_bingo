@@ -21,12 +21,12 @@ def layout(team_id=None,soort_groep=None,soort=None):
     print(team_id,soort_groep,soort)
     soort_groep=soort_groep.replace('_',' ')
     soort=soort.replace('_',' ')
-    fotos = os.listdir(f'{team_id}/{soort_groep}/{soort}/')
+    fotos = os.listdir(f'assets/{team_id}/{soort_groep}/{soort}/')
     photos = []
-    t_path = f'{team_id}/{soort_groep}/{soort}/omschrijving.txt'
-    tekst = open(t_path,'r').read()
+    t_path = f'assets/{team_id}/{soort_groep}/{soort}/omschrijving.txt'
+    tekst = open(t_path,'r',encoding="utf-8").read()
     for foto in fotos:
-        image_filename = f'{team_id}/{soort_groep}/{soort}/'+foto
+        image_filename = f'assets/{team_id}/{soort_groep}/{soort}/'+foto
         encoded_image = base64.b64encode(open(image_filename, 'rb').read())
         img = html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),style = {
                     'height': '60%',
