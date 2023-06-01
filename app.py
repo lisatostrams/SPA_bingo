@@ -12,7 +12,8 @@ import os
 from dash import html, dcc
 import gunicorn
 
-pages_folder=os.path.join(os.path.dirname(__name__), "/pages")
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+pages_folder=os.path.join(os.path.dirname(__name__), "pages")
 
 app = dash.Dash(
     external_stylesheets=[dbc.themes.QUARTZ],
